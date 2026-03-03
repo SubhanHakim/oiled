@@ -22,7 +22,7 @@ export default function Community() {
         </p>
 
         <a
-          href="https://twitter.com"
+          href="https://x.com/i/communities/2028893662080565475/"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary inline-flex items-center justify-center gap-4"

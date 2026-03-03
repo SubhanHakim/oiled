@@ -28,7 +28,7 @@ export default function Header() {
             <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/i/communities/2028893662080565475/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-50 transition-all flex items-center"
