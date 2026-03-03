@@ -9,7 +9,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           <a href="#generator" className="hover:border-b border-[#1a1a1a]">
-            SYSTEM
+            GENERATOR
           </a>
           <a href="#features" className="hover:opacity-50 transition-all">
             <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
