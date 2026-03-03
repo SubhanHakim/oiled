@@ -13,7 +13,7 @@ export default function Header() {
             <img
               src="/logo-nav.png"
               alt="Oiled Logo"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </a>
         </div>
