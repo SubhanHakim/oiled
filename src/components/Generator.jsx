@@ -69,7 +69,7 @@ export default function Generator() {
         </div>
 
         <div className="flex justify-between font-body text-[10px] uppercase tracking-widest mb-2 font-bold px-1">
-          <span>// YOUR PFP</span>
+          <span>// INPUT</span>
           <span>// OILED CONFIG</span>
         </div>
 
@@ -78,7 +78,7 @@ export default function Generator() {
           <div className="p-6 md:p-10 flex flex-col gap-8 border-b md:border-b-0 md:border-r border-[#1a1a1a]">
             <div className="flex flex-col gap-3">
               <label className="font-body text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> BASE IMAGE
+                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> YOUR PFP
               </label>
 
               {!imagePreview ? (
