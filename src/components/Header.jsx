@@ -1,16 +1,16 @@
 import React from "react";
-import logo from "../assets/logo.png";
 
 export default function Header() {
   return (
     <header className="w-full py-6 absolute top-0 z-50">
       <div className="w-full px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Oiled"
-            className="h-10 sm:h-12 object-contain grayscale opacity-80 mix-blend-multiply"
-          />
+          <a
+            href="/"
+            className="font-heading font-black tracking-widest text-2xl uppercase text-[#1a1a1a]"
+          >
+            OILED
+          </a>
         </div>
 
         <nav className="flex gap-6 items-center text-xs font-body uppercase tracking-[0.2em] text-[#1a1a1a]">

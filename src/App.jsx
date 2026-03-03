@@ -14,7 +14,7 @@ function App() {
       <main>
         <Hero />
         <Generator />
-        <Features />
+        {/* <Features /> */}
         <Gallery />
         <Community />
       </main>
