@@ -1,7 +1,8 @@
 @import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap");
 
-@theme {
+:root {
   --font-outfit: "Outfit", sans-serif;
   --font-inter: "Inter", sans-serif;
   --color-brand: #e5b800;
