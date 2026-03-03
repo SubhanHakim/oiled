@@ -1,55 +1,56 @@
 import React from "react";
-import { Sparkles, Layers, Zap } from "lucide-react";
 
 export default function Features() {
-  const features = [
+  const specs = [
     {
-      icon: <Sparkles className="w-8 h-8 text-[#e5b800]" />,
-      title: "Hyper-Reflective Output",
-      description:
-        "Our proprietary algorithm ensures maximum light scattering. The oil isn't just dark, it's irresponsibly shiny.",
+      id: "01",
+      title: "ALGORITHM",
+      text: "Our neural network applies hyper-reflective oil layering techniques to underlying bitmaps.",
     },
     {
-      icon: <Layers className="w-8 h-8 text-[#e5b800]" />,
-      title: "Non-Destructive Process",
-      description:
-        "We preserve your core facial geometry while hopelessly covering it in thick, digital crude. Your eyes remain visible.",
+      id: "02",
+      title: "PRESERVATION",
+      text: "Core facial geometry is accurately detected to preserve visibility of identity markers.",
     },
     {
-      icon: <Zap className="w-8 h-8 text-[#e5b800]" />,
-      title: "Real-time Viscosity",
-      description:
-        "From light translucent syrup to the densest black tar. You choose how ruined your picture gets.",
+      id: "03",
+      title: "VISCOSITY",
+      text: "Choose from parameters ranging from completely translucent to unreadably dense.",
     },
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-white relative z-10 border-y border-black/5">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-outfit font-extrabold mb-4 tracking-tight text-[#121212]">
-            Why are we doing this?
+    <section id="features" className="py-24 border-t border-[#1a1a1a]">
+      <div className="max-w-[1000px] mx-auto px-6">
+        <div className="mb-16 border-b border-[#1a1a1a] pb-4 flex items-end justify-between">
+          <h2 className="text-xl sm:text-2xl font-heading font-bold uppercase tracking-widest">
+            DOCUMENTATION
           </h2>
-          <p className="text-zinc-500 font-inter text-base sm:text-lg max-w-[600px] mx-auto">
-            We spent millions developing a state-of-the-art AI, and this is what
-            we decided to use it for.
-          </p>
+          <span className="font-body text-[10px] tracking-widest uppercase hidden sm:block font-bold">
+            SYSTEM / SPECS
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#1a1a1a]">
+          {specs.map((item, index) => (
             <div
               key={index}
-              className="bg-[#fafafa] p-6 sm:p-8 rounded-2xl border border-black/5 hover:border-[#e5b800]/30 transition-colors duration-300 flex flex-col items-center text-center group"
+              className={`p-8 hover:bg-black/5 transition-colors flex flex-col justify-between min-h-[250px] ${
+                index !== specs.length - 1
+                  ? "border-b md:border-b-0 md:border-r border-[#1a1a1a]"
+                  : ""
+              }`}
             >
-              <div className="p-4 bg-white rounded-xl shadow-sm mb-5 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+              <div>
+                <span className="font-body font-bold text-[10px] tracking-widest opacity-50 block mb-4">
+                  [{item.id}]
+                </span>
+                <h3 className="font-body font-bold uppercase tracking-widest mb-4">
+                  {item.title}
+                </h3>
               </div>
-              <h3 className="font-outfit font-bold text-xl text-[#121212] mb-3">
-                {feature.title}
-              </h3>
-              <p className="font-inter text-zinc-500 leading-relaxed text-sm">
-                {feature.description}
+              <p className="font-body text-xs leading-[2] tracking-wide opacity-80">
+                {item.text}
               </p>
             </div>
           ))}

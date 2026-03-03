@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {
-  Upload,
-  ImageIcon,
-  RefreshCw,
-  Download,
-  Settings2,
-} from "lucide-react";
+import { Upload, RefreshCw } from "lucide-react";
 
 export default function Generator() {
   const [image, setImage] = useState(null);
@@ -58,141 +52,140 @@ export default function Generator() {
   };
 
   return (
-    <section id="generator" className="py-16 sm:py-20 relative z-10">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-outfit font-extrabold mb-4 tracking-tight text-[#121212]">
-            The Machine
+    <section
+      id="generator"
+      className="py-24 relative z-10 border-t border-[#1a1a1a]"
+    >
+      <div className="max-w-[1000px] mx-auto px-6">
+        <div className="text-center mb-20 flex flex-col items-center">
+          <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-heading font-bold mb-6 tracking-widest uppercase">
+            WHAT ARE OILED?
           </h2>
-          <p className="text-zinc-600 font-inter text-base sm:text-lg max-w-[600px] mx-auto">
-            Give us an image, we give you oil. Simple as that.
+          <p className="text-xs sm:text-sm font-body opacity-80 max-w-[600px] leading-[2] tracking-wide">
+            Each fluid transformation is applied uniquely based on the
+            underlying geometry. Upload an image to witness the computational
+            process in real-time.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start max-w-[1000px] mx-auto">
+        <div className="flex justify-between font-body text-[10px] uppercase tracking-widest mb-2 font-bold px-1">
+          <span>// INPUT</span>
+          <span>// SYSTEM CONFIG</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#1a1a1a]">
           {/* Controls Panel */}
-          <div className="glass-panel p-5 sm:p-8 flex flex-col gap-6 sm:gap-8">
-            <div>
-              <label className="flex items-center gap-2 font-outfit font-semibold text-lg mb-3 text-[#121212]">
-                <Upload size={20} className="text-[#e5b800]" />
-                1. Upload an Image
+          <div className="p-6 md:p-10 flex flex-col gap-8 border-b md:border-b-0 md:border-r border-[#1a1a1a]">
+            <div className="flex flex-col gap-3">
+              <label className="font-body text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> BASE IMAGE
               </label>
 
               {!imagePreview ? (
-                <div className="relative w-full h-56 border-2 border-dashed border-black/10 rounded-2xl flex flex-col items-center justify-center gap-3 transition-colors duration-300 cursor-pointer bg-black/[0.02] hover:bg-black/[0.04] hover:border-[#e5b800]/50 group">
+                <div className="relative w-full h-48 border border-[#1a1a1a] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-black/5 transition-colors font-body">
                   <input
                     type="file"
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                     accept="image/*"
                     onChange={handleFileChange}
                   />
-                  <ImageIcon
-                    size={48}
-                    className="text-zinc-400 group-hover:text-[#e5b800] transition-colors relative z-10 pointer-events-none"
-                  />
-                  <span className="text-zinc-500 font-medium relative z-10 pointer-events-none group-hover:text-[#121212] transition-colors">
-                    Click to browse or drag image here
+                  <Upload size={20} className="mb-2" />
+                  <span className="text-[10px] uppercase tracking-wider text-center px-4">
+                    [ CLICK OR DRAG & DROP ]
                   </span>
                 </div>
               ) : (
-                <div className="relative rounded-2xl overflow-hidden border border-black/10 group">
+                <div className="relative border border-[#1a1a1a] p-2">
                   <img
                     src={imagePreview}
                     alt="Preview"
-                    className="w-full h-auto max-h-[400px] block object-cover"
+                    className="w-full h-auto max-h-[300px] object-contain border border-[#1a1a1a]"
                   />
                   <div
-                    className="absolute top-4 right-4 bg-white text-black text-sm px-4 py-2 rounded-lg border border-black/10 cursor-pointer hover:bg-gray-50 transition-colors z-10 shadow-sm font-medium"
+                    className="absolute top-4 right-4 bg-[#e6e6e2] text-[#1a1a1a] font-body text-[10px] uppercase tracking-widest px-3 py-1 border border-[#1a1a1a] cursor-pointer hover:bg-[#1a1a1a] hover:text-[#e6e6e2] transition-colors z-10 font-bold"
                     onClick={clearSelection}
                   >
-                    Replace Image
+                    CLR
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-
-            <div>
-              <label className="flex items-center gap-2 font-outfit font-semibold text-lg mb-3 text-[#121212]">
-                <Settings2 size={20} className="text-[#e5b800]" />
-                2. Choose Viscosity
+            <div className="flex flex-col gap-3 font-body">
+              <label className="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> FLUID TYPE
               </label>
-              <div className="relative group">
-                <select
-                  className="w-full p-4 bg-white border border-black/10 text-[#121212] rounded-xl font-inter text-base appearance-none outline-none transition-colors duration-300 cursor-pointer focus:border-[#e5b800] hover:border-black/20 shadow-sm"
-                  value={color}
-                  onChange={(e) => setColor(e.target.value)}
-                >
-                  <option value="very_light_crude">
-                    Very Light (Almost Water)
-                  </option>
-                  <option value="light_crude">
-                    Light Crude (Golden Syrup)
-                  </option>
-                  <option value="medium_crude">Medium Crude (Motor Oil)</option>
-                  <option value="heavy_crude">Heavy Crude (Thick Tar)</option>
-                  <option value="extra_heavy_crude">
-                    Extra Heavy (The Abyss)
-                  </option>
-                </select>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400 group-hover:text-[#e5b800] transition-colors">
-                  ▼
-                </div>
-              </div>
+              <select
+                className="w-full p-4 bg-transparent border border-[#1a1a1a] text-sm uppercase tracking-wider outline-none focus:bg-black/5 cursor-pointer rounded-none"
+                style={{ appearance: "none" }}
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+              >
+                <option value="very_light_crude">
+                  V_LIGHT_CR (TRANSLUCENT)
+                </option>
+                <option value="light_crude">L_CRUDE (GOLDEN)</option>
+                <option value="medium_crude">M_CRUDE (MOTOR)</option>
+                <option value="heavy_crude">H_CRUDE (VISCOUS)</option>
+                <option value="extra_heavy_crude">X_HEAVY (ABYSS)</option>
+              </select>
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-red-600 font-medium text-sm">
-                Oops: {error}
+              <div className="font-body border border-[#1a1a1a] border-l-4 border-l-black bg-black/5 p-4 text-[11px] uppercase tracking-wider text-[#1a1a1a] font-bold">
+                ERR: {error}
               </div>
             )}
 
             <button
-              className="btn-primary w-full p-4 mt-2 flex items-center justify-center gap-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none"
+              className="btn-primary w-full mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={handleUpload}
               disabled={loading || !image}
             >
               {loading ? (
-                <>
-                  <RefreshCw className="animate-spin" size={22} />
-                  Pouring...
-                </>
+                <span className="flex items-center gap-3">
+                  <RefreshCw className="animate-spin" size={16} />
+                  EXECUTING...
+                </span>
               ) : (
-                "Make it Shiny"
+                "INITIALIZE_ENGINE"
               )}
             </button>
           </div>
 
           {/* Result Panel */}
-          <div className="glass-panel p-5 sm:p-8 min-h-[400px] sm:min-h-[500px] flex flex-col items-center">
-            <div className="w-full flex items-center justify-between mb-4 sm:mb-6">
-              <h3 className="text-xl font-outfit font-semibold flex items-center gap-3 text-[#121212]">
+          <div className="p-6 md:p-10 flex flex-col justify-between min-h-[400px] font-body">
+            <label className="text-xs font-bold uppercase tracking-widest flex items-center justify-between mb-8">
+              <span className="flex items-center gap-2">
                 <span
-                  className={`w-2.5 h-2.5 rounded-full ${result ? "bg-emerald-500" : "bg-[#e5b800]"}`}
-                />
-                Output
-              </h3>
-            </div>
+                  className={`w-2 h-2 ${result ? "bg-green-600" : "bg-zinc-400"} block border border-[#1a1a1a]`}
+                ></span>
+                OUTPUT_RENDER
+              </span>
+              {loading && (
+                <span className="text-[10px] animate-pulse">PROCESSING_</span>
+              )}
+            </label>
 
-            <div className="flex-1 w-full border border-black/5 rounded-2xl bg-black/[0.02] flex items-center justify-center overflow-hidden relative">
+            <div className="flex-1 w-full border border-[#1a1a1a] p-2 flex items-center justify-center relative bg-transparent overflow-hidden">
               {loading ? (
                 <div className="text-center w-full">
-                  <div className="w-12 h-12 border-[3px] border-[#e5b800]/20 border-t-[#e5b800] rounded-full animate-spin mx-auto mb-6" />
-                  <p className="text-zinc-500 font-inter text-sm animate-pulse">
-                    Calculating fluid dynamics...
+                  <div className="w-8 h-8 border-2 border-[#1a1a1a] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-[10px] tracking-widest uppercase font-bold">
+                    COMPUTING_VECTORS
                   </p>
                 </div>
               ) : result ? (
                 <img
                   src={result}
                   alt="Generated"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain border border-[#1a1a1a]"
                 />
               ) : (
-                <div className="text-center text-zinc-400 relative z-10 p-4 w-full flex flex-col items-center">
-                  <ImageIcon size={48} className="mb-4 opacity-50" />
-                  <p className="font-outfit text-sm">Result will appear here</p>
+                <div className="text-center opacity-40">
+                  <p className="text-[10px] uppercase tracking-widest font-bold">
+                    [ NO DATA ]
+                  </p>
                 </div>
               )}
             </div>
@@ -207,7 +200,7 @@ export default function Generator() {
                     const a = document.createElement("a");
                     a.style.display = "none";
                     a.href = url;
-                    a.download = `oiled_transformation_${Date.now()}.png`;
+                    a.download = `oiled_${Date.now()}.png`;
                     document.body.appendChild(a);
                     a.click();
                     window.URL.revokeObjectURL(url);
@@ -217,10 +210,9 @@ export default function Generator() {
                     window.open(result, "_blank");
                   }
                 }}
-                className="mt-6 flex items-center w-full justify-center border border-black/10 cursor-pointer gap-2 bg-white p-4 rounded-xl text-[#121212] shadow-sm font-semibold transition-all hover:bg-gray-50"
+                className="mt-6 btn-primary w-full !bg-[#1a1a1a] !text-[#e6e6e2] hover:!bg-transparent hover:!text-[#1a1a1a]"
               >
-                <Download size={20} />
-                Download Highly Speculative Asset
+                DOWNLOAD_ASSET
               </button>
             )}
           </div>

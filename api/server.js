@@ -60,14 +60,12 @@ app.post("/api/generate", upload.single("image"), async (req, res) => {
 
     // Dynamic prompt
     const prompt = `
-Add realistic ${oilDescription} pouring from the top of the character's head.
-The oil must look natural and physically accurate.
-Thick fluid streams flowing down the forehead and shoulders.
-Realistic liquid behavior with gravity.
+Add a thick shiny liquid texture pouring from the top of the character's head.
+The effect must look like a ${oilDescription} fluid layer.
+Thick fluid streams flowing down the top and sides.
+Realistic glossy liquid behavior.
 No metallic shine.
-No artificial glow.
-Natural oil surface reflections only.
-
+Natural surface reflections only.
 Preserve the original character identity and proportions.
 Do not modify background or clothing.
 This is an additive liquid overlay effect only.

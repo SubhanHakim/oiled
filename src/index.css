@@ -1,64 +1,67 @@
 @import "tailwindcss";
-
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@400;700;900&display=swap");
 
 :root {
-  --font-outfit: "Outfit", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  --color-brand: #e5b800;
-  --color-brand-hover: #ccaa00;
-  --color-dark: #121212;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Space Mono", monospace;
+  --color-bg: #e6e6e2;
+  --color-border: #1a1a1a;
+  --color-text: #1a1a1a;
 }
 
 @layer base {
   body {
-    background-color: #fafafa;
-    color: #121212;
-    font-family: var(--font-inter);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 400;
     min-height: 100vh;
     overflow-x: hidden;
-    background-image: radial-gradient(
-      circle at 50% 0%,
-      rgba(229, 184, 0, 0.08) 0%,
-      transparent 60%
-    );
-    background-attachment: fixed;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #e5b800 0%, #ffaa00 100%);
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  }
-
   .btn-primary {
-    background: var(--color-dark);
-    color: #fff;
-    font-family: var(--font-outfit);
-    border-radius: 12px;
-    font-weight: 600;
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    border: 1px solid var(--color-border);
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    cursor: pointer;
   }
 
   .btn-primary:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: var(--color-text);
+    color: var(--color-bg);
   }
 
   .btn-primary:active:not(:disabled) {
-    transform: translateY(0);
+    transform: translateY(2px);
+  }
+
+  .panel {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    position: relative;
   }
 }

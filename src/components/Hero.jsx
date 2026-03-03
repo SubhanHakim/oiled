@@ -1,38 +1,26 @@
 import React from "react";
-import { Sparkles, ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[90vh] pt-20 text-center relative px-4">
-      <div className="max-w-[1000px] mx-auto relative z-10 flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 bg-black/5 border border-black/10 py-2 px-4 rounded-full mb-8 text-[#121212] font-semibold tracking-wide transition-colors cursor-default">
-          <Sparkles size={16} className="text-[#e5b800]" />
-          Actually just an AI that makes things shiny
-        </div>
-
-        <h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] mb-6 font-outfit font-extrabold tracking-tight text-[#121212]">
-          Digital Oil <br />
-          <span className="text-gradient">For Your PFP</span>
+    <section className="flex flex-col items-center justify-center min-h-[100vh] text-center px-4 relative">
+      <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center">
+        <h1 className="text-[clamp(3rem,12vw,9rem)] leading-[0.9] mb-12 font-heading font-bold tracking-widest uppercase text-[#1a1a1a]">
+          OILED
         </h1>
 
-        <p className="text-[clamp(1.1rem,1.5vw,1.2rem)] text-zinc-600 max-w-[650px] mx-auto mb-10 leading-relaxed font-inter">
-          It's exactly what it sounds like. Upload a perfectly normal picture,
-          and our highly-trained neural networks will expertly dump highly
-          reflective, physically accurate digital oil all over it. Oddly
-          satisfying, surprisingly shiny.
+        <div className="uppercase tracking-[0.3em] text-[10px] sm:text-xs mb-8 pb-2 border-b border-[#1a1a1a] inline-block px-4 font-body font-bold">
+          On-chain generative fluid
+        </div>
+
+        <p className="text-xs sm:text-sm max-w-[500px] mx-auto mb-10 leading-[2] font-body text-center text-[#1a1a1a] opacity-80 tracking-wide">
+          10,000 algorithmic, interoperable, highly reflective pixel-perfect
+          faces covered in thick digital viscosity.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-          <a
-            href="#generator"
-            className="btn-primary flex items-center justify-center gap-2 py-3.5 px-8 text-lg w-full sm:w-auto"
-          >
-            Slippery slope <ArrowDown size={18} className="fill-current" />
-          </a>
-        </div>
+        <a href="#generator" className="btn-primary">
+          VIEW GENERATOR &rarr;
+        </a>
       </div>
-
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle,rgba(229,184,0,0.06)_0%,transparent_60%)] z-0 pointer-events-none blur-3xl opacity-80" />
     </section>
   );
 }
