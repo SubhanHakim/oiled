@@ -11,7 +11,10 @@ export default function Footer() {
           <a href="#generator" className="hover:border-b border-[#1a1a1a]">
             GENERATOR
           </a>
-          <a href="#features" className="hover:opacity-50 transition-all">
+          <a
+            href="https://pump.fun/coin/HvPVZYoCZfq4mDC8FGSeQZys8uQZ91SozCaYnEsZpump"
+            className="hover:opacity-50 transition-all"
+          >
             <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
           </a>
           <a

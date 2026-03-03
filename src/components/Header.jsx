@@ -26,7 +26,7 @@ export default function Header() {
             Generator
           </a>
           <a
-            href="#features"
+            href="https://pump.fun/coin/HvPVZYoCZfq4mDC8FGSeQZys8uQZ91SozCaYnEsZpump"
             className="hover:opacity-50 transition-all flex items-center"
           >
             <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
