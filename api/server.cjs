@@ -38,7 +38,7 @@ const oilColorMap = {
 /* =========================
    GENERATE ROUTE
 ========================= */
-app.post("/generate", upload.single("image"), async (req, res) => {
+app.post("/api/generate", upload.single("image"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
   }
@@ -90,7 +90,7 @@ app.post("/generate", upload.single("image"), async (req, res) => {
 /* =========================
    HEALTH CHECK
 ========================= */
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.json({ status: "Oil PFP API Running on Vercel 🚀" });
 });
 

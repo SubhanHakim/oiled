@@ -42,7 +42,7 @@ export default function Generator() {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.post("/api/server/generate", formData, {
+      const res = await axios.post("/api/generate", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setResult(res.data.image);
