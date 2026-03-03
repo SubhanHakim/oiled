@@ -28,7 +28,7 @@ export default function Hero() {
 
         <p className="text-xs sm:text-sm max-w-[500px] mx-auto mb-10 leading-[2] font-body text-center text-[#1a1a1a] opacity-80 tracking-wide">
           Upload any perfectly normal picture and our neural networks will
-          expertly dump highly-reflective, glossy digital fluid all over it.
+          expertly dump highly reflective, glossy digital fluid all over it.
           Oddly satisfying.
         </p>
 

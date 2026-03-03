@@ -6,7 +6,12 @@ import img4 from "../assets/gallery/gallery4.png";
 import bg4 from "../assets/bg/4.png";
 
 export default function Gallery() {
-  const images = [img1, img2, img3, img4];
+  const galleryItems = [
+    { src: img1, name: "Niqadio" },
+    { src: img2, name: "DeGods" },
+    { src: img3, name: "Frogana" },
+    { src: img4, name: "Retardio Cousins" },
+  ];
 
   return (
     <section
@@ -23,7 +28,7 @@ export default function Gallery() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="mb-16 border-b border-[#1a1a1a] pb-4 flex items-end justify-between">
           <h2 className="text-xl sm:text-2xl font-heading font-bold uppercase tracking-widest">
-            RECENT OUTPUTS
+            GALLERY
           </h2>
           <span className="font-body text-[10px] tracking-widest uppercase hidden sm:block font-bold">
             DATABASE / ARCHIVE
@@ -31,17 +36,14 @@ export default function Gallery() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {images.map((src, index) => (
+          {galleryItems.map((item, index) => (
             <div
               key={index}
               className="relative group border border-[#1a1a1a] bg-black/[0.02] hover:bg-[#1a1a1a] hover:text-[#e6e6e2] transition-colors duration-300 p-3 flex flex-col"
             >
               <div className="flex justify-between items-center mb-3 px-1">
                 <span className="font-body text-[10px] font-bold tracking-widest uppercase">
-                  ID: 0x
-                  {Math.floor(Math.random() * 10000)
-                    .toString(16)
-                    .padStart(4, "0")}
+                  ID: {item.name}
                 </span>
                 <span className="font-body text-[10px] font-bold tracking-widest uppercase opacity-50">
                   v1.0.{index}
@@ -50,7 +52,7 @@ export default function Gallery() {
 
               <div className="relative overflow-hidden aspect-square border border-[#1a1a1a] group-hover:border-[#e6e6e2] transition-colors bg-[#e6e6e2]">
                 <img
-                  src={src}
+                  src={item.src}
                   alt={`Generated output ${index + 1}`}
                   className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                 />
