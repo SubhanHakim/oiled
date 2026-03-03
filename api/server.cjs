@@ -82,7 +82,8 @@ app.post("/api/generate", upload.single("image"), async (req, res) => {
     console.error("Generation Error:", error);
     res.status(500).json({
       success: false,
-      error: "Generation failed",
+      error: error.message || "Generation failed",
+      details: error.response?.data || error.toString(),
     });
   }
 });
@@ -95,6 +96,13 @@ app.get("/api", (req, res) => {
 });
 
 module.exports = app;
+
+// Vercel Serverless Function configuration to allow Multer file uploads
+module.exports.config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 if (require.main === module) {
   app.listen(5000, () => console.log("Local API server running on port 5000"));

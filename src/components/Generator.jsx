@@ -48,7 +48,10 @@ export default function Generator() {
       setResult(res.data.image);
     } catch (err) {
       console.error(err);
-      setError("Failed to generate image. Please try again.");
+      setError(
+        err.response?.data?.error ||
+          "Failed to generate image. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
