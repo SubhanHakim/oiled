@@ -8,9 +8,13 @@ export default function Header() {
         <div className="flex items-center">
           <a
             href="/"
-            className="font-heading font-black tracking-widest text-2xl uppercase text-[#1a1a1a]"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            OILED
+            <img
+              src="/logo-nav.png"
+              alt="Oiled Logo"
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </a>
         </div>
 

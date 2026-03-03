@@ -67,12 +67,11 @@ export default function Generator() {
       <div className="max-w-[1000px] mx-auto px-6 relative z-10">
         <div className="text-center mb-20 flex flex-col items-center">
           <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-heading font-bold mb-6 tracking-widest uppercase">
-            WHAT ARE OILED?
+            OILED PFP GENERATOR
           </h2>
           <p className="text-xs sm:text-sm font-body opacity-80 max-w-[600px] leading-[2] tracking-wide">
-            Each fluid transformation is applied uniquely based on the
-            underlying geometry. Upload an image to witness the computational
-            process in real-time.
+            Upload your PFP below, select your oil type, and initialize engine.
+            Don’t forget to download your oiled version.
           </p>
         </div>
 
