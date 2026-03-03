@@ -3,6 +3,7 @@ import img1 from "../assets/gallery/gallery1.jpeg";
 import img2 from "../assets/gallery/gallery2.png";
 import img3 from "../assets/gallery/galler3.png";
 import img4 from "../assets/gallery/gallery4.png";
+import bg4 from "../assets/bg/4.png";
 
 export default function Gallery() {
   const images = [img1, img2, img3, img4];
@@ -10,9 +11,16 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-24 border-t border-[#1a1a1a] overflow-hidden"
+      className="py-24 border-t border-[#1a1a1a] overflow-hidden relative"
     >
-      <div className="max-w-[1200px] mx-auto px-6">
+      {/* Background Decor */}
+      <img
+        src={bg4}
+        alt=""
+        className="absolute top-[30%] left-[-10%] md:left-[-5%] w-48 md:w-80 opacity-20 -rotate-12 pointer-events-none"
+      />
+
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="mb-16 border-b border-[#1a1a1a] pb-4 flex items-end justify-between">
           <h2 className="text-xl sm:text-2xl font-heading font-bold uppercase tracking-widest">
             RECENT OUTPUTS

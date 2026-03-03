@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Upload, RefreshCw } from "lucide-react";
+import bg3 from "../assets/bg/3.png";
 
 export default function Generator() {
   const [image, setImage] = useState(null);
@@ -54,9 +55,16 @@ export default function Generator() {
   return (
     <section
       id="generator"
-      className="py-24 relative z-10 border-t border-[#1a1a1a]"
+      className="py-24 relative overflow-hidden z-10 border-t border-[#1a1a1a]"
     >
-      <div className="max-w-[1000px] mx-auto px-6">
+      {/* Background Decor */}
+      <img
+        src={bg3}
+        alt=""
+        className="absolute top-[20%] right-[-5%] md:right-[5%] w-32 md:w-56 opacity-20 -rotate-12 pointer-events-none"
+      />
+
+      <div className="max-w-[1000px] mx-auto px-6 relative z-10">
         <div className="text-center mb-20 flex flex-col items-center">
           <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-heading font-bold mb-6 tracking-widest uppercase">
             WHAT ARE OILED?

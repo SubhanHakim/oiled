@@ -1,9 +1,23 @@
 import React from "react";
+import bg2 from "../assets/bg/2.png";
+import bg4 from "../assets/bg/4.png";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[100vh] text-center px-4 relative">
-      <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center">
+    <section className="flex flex-col items-center justify-center min-h-[100vh] text-center px-4 relative overflow-hidden">
+      {/* Background Decor */}
+      <img
+        src={bg2}
+        alt=""
+        className="absolute top-[15%] left-[5%] md:left-[15%] w-20 md:w-28 opacity-70 -rotate-12 pointer-events-none animate-pulse-slow"
+      />
+      <img
+        src={bg4}
+        alt=""
+        className="absolute bottom-[10%] right-[5%] md:right-[15%] w-32 md:w-48 opacity-50 rotate-[15deg] pointer-events-none"
+      />
+
+      <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center relative z-10">
         <h1 className="text-[clamp(3rem,12vw,9rem)] leading-[0.9] mb-12 font-heading font-bold tracking-widest uppercase text-[#1a1a1a]">
           OILED
         </h1>
