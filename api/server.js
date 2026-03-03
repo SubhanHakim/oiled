@@ -23,16 +23,20 @@ const replicate = new Replicate({
    COLOR PRESET MAP
 ========================= */
 const oilColorMap = {
-  light_golden_transparent:
-    "light golden transparent oil with semi-translucent glossy texture",
-  amber_orange_translucent:
-    "amber orange translucent oil with warm golden reflections",
-  dark_brown_crude_oil:
-    "dark brown crude oil with medium viscosity and slight gloss",
-  black_heavy_crude_oil:
-    "thick black heavy crude oil with very high viscosity and deep shine",
-  neon_green_slime:
-    "bright neon green slime-like oil with strong glossy highlights",
+  very_light_crude:
+    "very light crude oil, pale yellow color, low viscosity, semi-transparent liquid, natural subtle reflections",
+
+  light_crude:
+    "light crude oil, golden yellow color, medium-low viscosity, slightly translucent fluid, natural soft shine",
+
+  medium_crude:
+    "medium crude oil, amber brown color, medium viscosity, thicker fluid, subtle natural gloss",
+
+  heavy_crude:
+    "heavy crude oil, dark brown to nearly black color, high viscosity, thick dense liquid, low transparency, realistic natural surface reflections",
+
+  extra_heavy_crude:
+    "extra heavy crude oil, deep black color, extremely high viscosity, very thick tar-like liquid, almost opaque, minimal light reflection",
 };
 
 /* =========================
@@ -55,7 +59,19 @@ app.post("/api/generate", upload.single("image"), async (req, res) => {
     const base64Image = imageBuffer.toString("base64");
 
     // Dynamic prompt
-    const prompt = `Add very thick heavy ${oilDescription} pouring from the top of the character's head. The oil must be clearly visible and dominant. Large rounded dripping streams flowing down the forehead, cheeks and shoulders. Strong glossy reflections and bright white highlights. The oil should look dense and viscous. Keep the original character identity and face proportions exactly the same. Do not distort facial features. Do not modify the background or clothing. This is an additive overlay effect only.`;
+    const prompt = `
+Add realistic ${oilDescription} pouring from the top of the character's head.
+The oil must look natural and physically accurate.
+Thick fluid streams flowing down the forehead and shoulders.
+Realistic liquid behavior with gravity.
+No metallic shine.
+No artificial glow.
+Natural oil surface reflections only.
+
+Preserve the original character identity and proportions.
+Do not modify background or clothing.
+This is an additive liquid overlay effect only.
+`;
 
     const output = await replicate.run("openai/gpt-image-1.5", {
       input: {

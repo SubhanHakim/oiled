@@ -122,19 +122,11 @@ export default function Generator() {
                   value={color}
                   onChange={(e) => setColor(e.target.value)}
                 >
-                  <option value="light_golden_transparent">
-                    Liquid Gold (Translucent)
-                  </option>
-                  <option value="amber_orange_translucent">
-                    Amber Honey (Warm)
-                  </option>
-                  <option value="dark_brown_crude_oil">
-                    Dark Crude (Medium)
-                  </option>
-                  <option value="black_heavy_crude_oil">
-                    Heavy Crude (Thick)
-                  </option>
-                  <option value="neon_green_slime">Neon Slime (Bright)</option>
+                  <option value="very_light_crude">Very Light Crude</option>
+                  <option value="light_crude">Light Crude</option>
+                  <option value="medium_crude">Medium Crude</option>
+                  <option value="heavy_crude">Heavy Crude</option>
+                  <option value="extra_heavy_crude">Extra Heavy Crude</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400 text-[10px]">
                   ▼
@@ -196,14 +188,30 @@ export default function Generator() {
             </div>
 
             {result && (
-              <a
-                href={result}
-                download="oiled_pfp.png"
-                className="mt-6 flex items-center justify-center gap-2 bg-white/10 p-4 rounded-xl text-white font-semibold no-underline hover:bg-white/20 transition-colors"
+              <button
+                onClick={async () => {
+                  try {
+                    const response = await fetch(result);
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.style.display = "none";
+                    a.href = url;
+                    a.download = `oiled_pfp_${Date.now()}.png`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                  } catch (error) {
+                    console.error("Download failed:", error);
+                    window.open(result, "_blank");
+                  }
+                }}
+                className="mt-6 flex items-center w-full justify-center border-none cursor-pointer gap-2 bg-white/10 p-4 rounded-xl text-white font-semibold no-underline hover:bg-white/20 transition-colors"
               >
                 <Download size={20} />
                 Download HD Image
-              </a>
+              </button>
             )}
           </div>
         </div>
