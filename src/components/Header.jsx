@@ -1,4 +1,5 @@
 import React from "react";
+import dexscreener from "../assets/dexscreener.svg";
 
 export default function Header() {
   return (
@@ -22,9 +23,9 @@ export default function Header() {
           </a>
           <a
             href="#features"
-            className="hover:border-b hover:border-black transition-all pb-1"
+            className="hover:opacity-50 transition-all flex items-center"
           >
-            Docs
+            <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
           </a>
           <a
             href="https://twitter.com"

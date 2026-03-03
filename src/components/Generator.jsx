@@ -113,7 +113,7 @@ export default function Generator() {
 
             <div className="flex flex-col gap-3 font-body">
               <label className="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> FLUID TYPE
+                <span className="w-2 h-2 bg-[#1a1a1a] block"></span> OIL TYPE
               </label>
               <select
                 className="w-full p-4 bg-transparent border border-[#1a1a1a] text-sm uppercase tracking-wider outline-none focus:bg-black/5 cursor-pointer rounded-none"
