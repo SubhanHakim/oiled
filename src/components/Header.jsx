@@ -9,7 +9,7 @@ export default function Header() {
           <img
             src={logo}
             alt="Oiled"
-            className="h-6 object-contain grayscale opacity-80 mix-blend-multiply"
+            className="h-10 sm:h-12 object-contain grayscale opacity-80 mix-blend-multiply"
           />
         </div>
 
