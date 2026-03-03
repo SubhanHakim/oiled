@@ -4,11 +4,15 @@ import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-[#fafafa]/80 pt-16 pb-10 mt-24">
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center text-center">
+    <footer className="border-t border-black/10 bg-[#fafafa]/80 pt-12 sm:pt-16 pb-8 sm:pb-10 mt-16 sm:mt-24">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
         <div className="flex items-center gap-2.5 mb-6">
           <div className="flex items-center font-outfit font-extrabold text-[28px] tracking-tight text-[#121212]">
-            <img src={logo} alt="Oiled Logo" className="h-20 object-contain" />
+            <img
+              src={logo}
+              alt="Oiled Logo"
+              className="h-12 sm:h-20 object-contain"
+            />
           </div>
         </div>
 

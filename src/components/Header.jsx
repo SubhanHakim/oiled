@@ -4,13 +4,17 @@ import logo from "../assets/logo.png";
 
 export default function Header() {
   return (
-    <header className="w-full py-5 border-b border-black/5 bg-[#fafafa]/80 backdrop-blur-xl fixed top-0 z-50">
-      <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+    <header className="w-full py-4 sm:py-5 border-b border-black/5 bg-[#fafafa]/80 backdrop-blur-xl fixed top-0 z-50">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between">
         <div className="flex items-center">
-          <img src={logo} alt="Oiled Logo" className="h-16 object-contain" />
+          <img
+            src={logo}
+            alt="Oiled Logo"
+            className="h-10 sm:h-16 object-contain"
+          />
         </div>
 
-        <nav className="flex gap-6 items-center">
+        <nav className="flex gap-4 sm:gap-6 items-center">
           <a
             href="https://twitter.com"
             target="_blank"

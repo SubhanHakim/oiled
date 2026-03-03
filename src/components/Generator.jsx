@@ -58,20 +58,20 @@ export default function Generator() {
   };
 
   return (
-    <section id="generator" className="py-20 relative z-10">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="generator" className="py-16 sm:py-20 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-outfit font-extrabold mb-4 tracking-tight text-[#121212]">
             The Machine
           </h2>
-          <p className="text-zinc-600 font-inter text-lg max-w-[600px] mx-auto">
+          <p className="text-zinc-600 font-inter text-base sm:text-lg max-w-[600px] mx-auto">
             Give us an image, we give you oil. Simple as that.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-[1000px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start max-w-[1000px] mx-auto">
           {/* Controls Panel */}
-          <div className="glass-panel p-8 flex flex-col gap-8">
+          <div className="glass-panel p-5 sm:p-8 flex flex-col gap-6 sm:gap-8">
             <div>
               <label className="flex items-center gap-2 font-outfit font-semibold text-lg mb-3 text-[#121212]">
                 <Upload size={20} className="text-[#e5b800]" />
@@ -165,8 +165,8 @@ export default function Generator() {
           </div>
 
           {/* Result Panel */}
-          <div className="glass-panel p-8 min-h-[500px] flex flex-col items-center">
-            <div className="w-full flex items-center justify-between mb-6">
+          <div className="glass-panel p-5 sm:p-8 min-h-[400px] sm:min-h-[500px] flex flex-col items-center">
+            <div className="w-full flex items-center justify-between mb-4 sm:mb-6">
               <h3 className="text-xl font-outfit font-semibold flex items-center gap-3 text-[#121212]">
                 <span
                   className={`w-2.5 h-2.5 rounded-full ${result ? "bg-emerald-500" : "bg-[#e5b800]"}`}
