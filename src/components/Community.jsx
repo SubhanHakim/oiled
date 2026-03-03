@@ -34,18 +34,24 @@ export default function Community() {
         <div className="flex flex-col gap-4 justify-center items-center max-w-sm mx-auto w-full">
           {/* Contract Address Box */}
           <div className="flex items-stretch border border-[#1a1a1a] bg-transparent w-full">
-            <div className="px-4 py-3 font-body text-xs font-bold tracking-widest text-[#1a1a1a] border-r border-[#1a1a1a] bg-black/5 flex items-center justify-center">
+            <div className="px-3 sm:px-4 py-3 font-body text-[10px] sm:text-xs font-bold tracking-widest text-[#1a1a1a] border-r border-[#1a1a1a] bg-black/5 flex items-center justify-center shrink-0">
               CA
             </div>
-            <div className="px-4 py-3 font-body text-xs tracking-wider opacity-60 truncate flex-1 flex items-center justify-start min-w-[150px]">
-              {contractAddress}
+            <div className="px-3 sm:px-4 py-3 font-body text-[10px] sm:text-xs tracking-wider opacity-60 flex-1 min-w-0 flex items-center justify-start">
+              <span className="truncate w-full text-left select-all">
+                {contractAddress}
+              </span>
             </div>
             <button
               onClick={handleCopy}
-              className="p-3 hover:bg-[#1a1a1a] hover:text-[#e6e6e2] transition-colors border-l border-[#1a1a1a] flex items-center justify-center"
+              className="p-3 sm:px-4 sm:py-3 hover:bg-[#1a1a1a] hover:text-[#e6e6e2] transition-colors border-l border-[#1a1a1a] flex items-center justify-center shrink-0"
               title="Copy Contract Address"
             >
-              {copied ? <Check size={16} /> : <Copy size={16} />}
+              {copied ? (
+                <Check size={14} className="sm:w-4 sm:h-4" />
+              ) : (
+                <Copy size={14} className="sm:w-4 sm:h-4" />
+              )}
             </button>
           </div>
 
