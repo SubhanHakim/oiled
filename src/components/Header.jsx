@@ -27,6 +27,8 @@ export default function Header() {
           </a>
           <a
             href="https://pump.fun/coin/HvPVZYoCZfq4mDC8FGSeQZys8uQZ91SozCaYnEsZpump"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:opacity-50 transition-all flex items-center"
           >
             <img src={dexscreener} alt="Dexscreener" className="h-4 w-4" />
