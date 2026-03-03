@@ -60,26 +60,26 @@ export default function Generator() {
   return (
     <section id="generator" className="py-20 relative z-10">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-outfit font-extrabold mb-4">
-            Generator Hub
+        <div className="text-center mb-16">
+          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-outfit font-extrabold mb-4 tracking-tight text-[#121212]">
+            The Machine
           </h2>
-          <p className="text-zinc-400">
-            Upload your target, select an oil preset, and hit generate.
+          <p className="text-zinc-600 font-inter text-lg max-w-[600px] mx-auto">
+            Give us an image, we give you oil. Simple as that.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-[1000px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-[1000px] mx-auto">
           {/* Controls Panel */}
-          <div className="glass-panel p-8 flex flex-col gap-6 rounded-3xl">
+          <div className="glass-panel p-8 flex flex-col gap-8">
             <div>
-              <label className="flex items-center gap-2 font-semibold mb-3 text-white">
-                <Upload size={18} className="text-[#ffaa00]" />
-                Upload Image
+              <label className="flex items-center gap-2 font-outfit font-semibold text-lg mb-3 text-[#121212]">
+                <Upload size={20} className="text-[#e5b800]" />
+                1. Upload an Image
               </label>
 
               {!imagePreview ? (
-                <div className="relative w-full h-48 border-2 border-dashed border-[#ffaa00]/40 rounded-2xl flex flex-col items-center justify-center gap-3 transition-colors duration-300 cursor-pointer bg-[#ffaa00]/[0.02] hover:bg-[#ffaa00]/[0.05] hover:border-[#ffaa00]">
+                <div className="relative w-full h-56 border-2 border-dashed border-black/10 rounded-2xl flex flex-col items-center justify-center gap-3 transition-colors duration-300 cursor-pointer bg-black/[0.02] hover:bg-black/[0.04] hover:border-[#e5b800]/50 group">
                   <input
                     type="file"
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
@@ -88,89 +88,99 @@ export default function Generator() {
                   />
                   <ImageIcon
                     size={48}
-                    className="text-white/20 relative z-10 pointer-events-none"
+                    className="text-zinc-400 group-hover:text-[#e5b800] transition-colors relative z-10 pointer-events-none"
                   />
-                  <span className="text-zinc-400 font-medium relative z-10 pointer-events-none">
-                    Click or drag image here
+                  <span className="text-zinc-500 font-medium relative z-10 pointer-events-none group-hover:text-[#121212] transition-colors">
+                    Click to browse or drag image here
                   </span>
                 </div>
               ) : (
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
+                <div className="relative rounded-2xl overflow-hidden border border-black/10 group">
                   <img
                     src={imagePreview}
                     alt="Preview"
-                    className="w-full h-auto block object-cover"
+                    className="w-full h-auto max-h-[400px] block object-cover"
                   />
                   <div
-                    className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10 cursor-pointer text-sm hover:bg-black/80 transition-colors z-10"
+                    className="absolute top-4 right-4 bg-white text-black text-sm px-4 py-2 rounded-lg border border-black/10 cursor-pointer hover:bg-gray-50 transition-colors z-10 shadow-sm font-medium"
                     onClick={clearSelection}
                   >
-                    Change Image
+                    Replace Image
                   </div>
                 </div>
               )}
             </div>
 
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+
             <div>
-              <label className="flex items-center gap-2 font-semibold mb-3 text-white">
-                <Settings2 size={18} className="text-[#ffaa00]" />
-                Oil Viscosity & Color
+              <label className="flex items-center gap-2 font-outfit font-semibold text-lg mb-3 text-[#121212]">
+                <Settings2 size={20} className="text-[#e5b800]" />
+                2. Choose Viscosity
               </label>
-              <div className="relative">
+              <div className="relative group">
                 <select
-                  className="w-full p-3.5 bg-black/50 border border-white/10 text-white rounded-xl font-inter text-base appearance-none outline-none transition-colors duration-300 cursor-pointer focus:border-[#ffaa00]"
+                  className="w-full p-4 bg-white border border-black/10 text-[#121212] rounded-xl font-inter text-base appearance-none outline-none transition-colors duration-300 cursor-pointer focus:border-[#e5b800] hover:border-black/20 shadow-sm"
                   value={color}
                   onChange={(e) => setColor(e.target.value)}
                 >
-                  <option value="very_light_crude">Very Light Crude</option>
-                  <option value="light_crude">Light Crude</option>
-                  <option value="medium_crude">Medium Crude</option>
-                  <option value="heavy_crude">Heavy Crude</option>
-                  <option value="extra_heavy_crude">Extra Heavy Crude</option>
+                  <option value="very_light_crude">
+                    Very Light (Almost Water)
+                  </option>
+                  <option value="light_crude">
+                    Light Crude (Golden Syrup)
+                  </option>
+                  <option value="medium_crude">Medium Crude (Motor Oil)</option>
+                  <option value="heavy_crude">Heavy Crude (Thick Tar)</option>
+                  <option value="extra_heavy_crude">
+                    Extra Heavy (The Abyss)
+                  </option>
                 </select>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400 text-[10px]">
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400 group-hover:text-[#e5b800] transition-colors">
                   ▼
                 </div>
               </div>
             </div>
 
             {error && (
-              <div className="bg-red-500/10 border border-red-500/30 p-4 rounded-xl text-red-500 text-sm">
-                {error}
+              <div className="bg-red-50 border border-red-100 p-4 rounded-xl text-red-600 font-medium text-sm">
+                Oops: {error}
               </div>
             )}
 
             <button
-              className="btn-primary w-full p-4 text-lg mt-2 flex items-center justify-center gap-2 rounded-full font-semibold transition-transform duration-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed border-0"
+              className="btn-primary w-full p-4 mt-2 flex items-center justify-center gap-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none disabled:hover:shadow-none"
               onClick={handleUpload}
               disabled={loading || !image}
             >
               {loading ? (
                 <>
-                  <RefreshCw className="animate-spin" size={20} />
-                  Processing...
+                  <RefreshCw className="animate-spin" size={22} />
+                  Pouring...
                 </>
               ) : (
-                "Generate PFP"
+                "Make it Shiny"
               )}
             </button>
           </div>
 
           {/* Result Panel */}
-          <div className="glass-panel p-8 min-h-[400px] flex flex-col rounded-3xl">
-            <h3 className="text-2xl mb-6 flex items-center gap-3 font-outfit font-bold relative z-10 m-0">
-              <span
-                className={`w-2.5 h-2.5 rounded-full ${result ? "bg-emerald-500" : "bg-[#ffaa00] inline-block"}`}
-              />
-              Output Preview
-            </h3>
+          <div className="glass-panel p-8 min-h-[500px] flex flex-col items-center">
+            <div className="w-full flex items-center justify-between mb-6">
+              <h3 className="text-xl font-outfit font-semibold flex items-center gap-3 text-[#121212]">
+                <span
+                  className={`w-2.5 h-2.5 rounded-full ${result ? "bg-emerald-500" : "bg-[#e5b800]"}`}
+                />
+                Output
+              </h3>
+            </div>
 
-            <div className="flex-1 border border-white/10 rounded-2xl bg-black/30 flex items-center justify-center overflow-hidden relative">
+            <div className="flex-1 w-full border border-black/5 rounded-2xl bg-black/[0.02] flex items-center justify-center overflow-hidden relative">
               {loading ? (
                 <div className="text-center w-full">
-                  <div className="w-12 h-12 border-4 border-[#ffaa00]/20 border-t-[#ffaa00] rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-zinc-400 animate-pulse">
-                    Applying neural oil effects...
+                  <div className="w-12 h-12 border-[3px] border-[#e5b800]/20 border-t-[#e5b800] rounded-full animate-spin mx-auto mb-6" />
+                  <p className="text-zinc-500 font-inter text-sm animate-pulse">
+                    Calculating fluid dynamics...
                   </p>
                 </div>
               ) : result ? (
@@ -180,9 +190,9 @@ export default function Generator() {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="text-center text-zinc-400 opacity-50 relative z-10 p-4 w-full">
-                  <ImageIcon size={64} className="mx-auto mb-4" />
-                  <p>Your masterpiece will appear here</p>
+                <div className="text-center text-zinc-400 relative z-10 p-4 w-full flex flex-col items-center">
+                  <ImageIcon size={48} className="mb-4 opacity-50" />
+                  <p className="font-outfit text-sm">Result will appear here</p>
                 </div>
               )}
             </div>
@@ -197,7 +207,7 @@ export default function Generator() {
                     const a = document.createElement("a");
                     a.style.display = "none";
                     a.href = url;
-                    a.download = `oiled_pfp_${Date.now()}.png`;
+                    a.download = `oiled_transformation_${Date.now()}.png`;
                     document.body.appendChild(a);
                     a.click();
                     window.URL.revokeObjectURL(url);
@@ -207,10 +217,10 @@ export default function Generator() {
                     window.open(result, "_blank");
                   }
                 }}
-                className="mt-6 flex items-center w-full justify-center border-none cursor-pointer gap-2 bg-white/10 p-4 rounded-xl text-white font-semibold no-underline hover:bg-white/20 transition-colors"
+                className="mt-6 flex items-center w-full justify-center border border-black/10 cursor-pointer gap-2 bg-white p-4 rounded-xl text-[#121212] shadow-sm font-semibold transition-all hover:bg-gray-50"
               >
                 <Download size={20} />
-                Download HD Image
+                Download Highly Speculative Asset
               </button>
             )}
           </div>

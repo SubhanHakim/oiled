@@ -1,36 +1,36 @@
 import React from "react";
-import { Droplet, Twitter } from "lucide-react";
+import { Twitter } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050505]/80 pt-16 pb-10 mt-24">
+    <footer className="border-t border-black/10 bg-[#fafafa]/80 pt-16 pb-10 mt-24">
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center text-center">
         <div className="flex items-center gap-2.5 mb-6">
-          <Droplet className="text-[#ffaa00]" size={32} />
-          <h2 className="text-3xl m-0 font-outfit font-extrabold">
-            <span className="text-white">OIL</span>
-            <span className="text-gradient">ED</span>
-          </h2>
+          <div className="flex items-center font-outfit font-extrabold text-[28px] tracking-tight text-[#121212]">
+            <img src={logo} alt="Oiled Logo" className="h-20 object-contain" />
+          </div>
         </div>
 
-        <p className="text-zinc-400 max-w-md mb-8 leading-relaxed">
-          The premium neural network platform for transforming avatars into
-          liquid gold masterpieces.
+        <p className="text-zinc-500 max-w-md mb-8 leading-relaxed">
+          The highly unnecessary yet incredibly satisfying platform for making
+          normal pictures look remarkably oily.
         </p>
 
         <div className="flex gap-4 mb-12">
           <a
             href="#"
-            className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#ffaa00] hover:text-[#ffaa00] transition-colors duration-300"
+            className="w-12 h-12 rounded-full bg-black/5 border border-black/10 flex items-center justify-center text-zinc-500 hover:border-[#121212] hover:text-[#121212] transition-colors duration-300"
           >
             <Twitter size={20} />
           </a>
         </div>
 
-        <div className="w-full h-[1px] bg-white/10 mb-8" />
+        <div className="w-full h-[1px] bg-black/10 mb-8" />
 
-        <p className="text-zinc-400 text-sm">
-          © {new Date().getFullYear()} Oiled App. All rights reserved.
+        <p className="text-zinc-500 text-sm">
+          © {new Date().getFullYear()} Oiled App. Made with AI and 100%
+          synthetic fluid.
         </p>
       </div>
     </footer>
