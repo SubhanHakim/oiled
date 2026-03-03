@@ -4,7 +4,7 @@ import { Copy, Check } from "lucide-react";
 
 export default function Community() {
   const [copied, setCopied] = useState(false);
-  const contractAddress = "TBA"; // Replace with actual CA when ready
+  const contractAddress = "HvPVZYoCZfq4mDC8FGSeQZys8uQZ91SozCaYnEsZpump";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(contractAddress);
