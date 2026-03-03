@@ -69,8 +69,8 @@ export default function Generator() {
         </div>
 
         <div className="flex justify-between font-body text-[10px] uppercase tracking-widest mb-2 font-bold px-1">
-          <span>// INPUT</span>
-          <span>// SYSTEM CONFIG</span>
+          <span>// YOUR PFP</span>
+          <span>// OILED CONFIG</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#1a1a1a]">
